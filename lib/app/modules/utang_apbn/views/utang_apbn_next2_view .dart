@@ -83,12 +83,18 @@ class UtangApbnNext2View extends GetView<UtangApbnController> {
                         color: Color(0xff034779)),
                   ),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 CustomCarouselSlider(
                   items: controller.itemList,
                   height: 200,
                   subHeight: 0,
                   width: MediaQuery.of(context).size.width * .9,
                   autoplay: true,
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Center(
                   child: Container(

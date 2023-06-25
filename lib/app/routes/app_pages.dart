@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
 
-import 'package:eduit/app/modules/account_info/bindings/account_info_binding.dart';
-import 'package:eduit/app/modules/account_info/views/account_info_view.dart';
-import 'package:eduit/app/modules/account_page/bindings/account_page_binding.dart';
-import 'package:eduit/app/modules/account_page/views/account_page_view.dart';
+import 'package:eduit/app/modules/about/bindings/about_binding.dart';
+import 'package:eduit/app/modules/about/views/about_view.dart';
 import 'package:eduit/app/modules/artikel_podcast/bindings/artikel_podcast_binding.dart';
 import 'package:eduit/app/modules/artikel_podcast/views/artikel_podcast_view.dart';
 import 'package:eduit/app/modules/daftar_ymyb/bindings/daftar_ymyb_binding.dart';
@@ -18,19 +16,12 @@ import 'package:eduit/app/modules/kalkulator_duit/bindings/kalkulator_duit_bindi
 import 'package:eduit/app/modules/kalkulator_duit/views/kalkulator_duit_view.dart';
 import 'package:eduit/app/modules/kamus_keuangan_page/bindings/kamus_keuangan_page_binding.dart';
 import 'package:eduit/app/modules/kamus_keuangan_page/views/kamus_keuangan_page_view.dart';
-import 'package:eduit/app/modules/kirim_tulisan/bindings/kirim_tulisan_binding.dart';
-import 'package:eduit/app/modules/kirim_tulisan/views/kirim_tulisan_view.dart';
 import 'package:eduit/app/modules/konsultasi/bindings/konsultasi_binding.dart';
 import 'package:eduit/app/modules/konsultasi/views/konsultasi_view.dart';
 import 'package:eduit/app/modules/konten_edu/bindings/konten_edu_binding.dart';
 import 'package:eduit/app/modules/konten_edu/views/konten_edu_view.dart';
-import 'package:eduit/app/modules/login_page/bindings/login_page_binding.dart';
-import 'package:eduit/app/modules/login_page/controllers/login_page_controller.dart';
-import 'package:eduit/app/modules/login_page/views/login_page_view.dart';
 import 'package:eduit/app/modules/navbar_page/bindings/navbar_page_binding.dart';
 import 'package:eduit/app/modules/navbar_page/views/navbar_page_view.dart';
-import 'package:eduit/app/modules/signup_page/bindings/signup_page_binding.dart';
-import 'package:eduit/app/modules/signup_page/views/signup_page_view.dart';
 import 'package:eduit/app/modules/utang_apbn/bindings/utang_apbn_binding.dart';
 import 'package:eduit/app/modules/utang_apbn/views/utang_apbn_view.dart';
 import 'package:eduit/app/modules/utang_belajar/bindings/utang_belajar_binding.dart';
@@ -47,8 +38,6 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  final LoginPageController landingPageController =
-      Get.put(LoginPageController(), permanent: true);
   static const INITIAL = Routes.SPLASHSCREEN;
 
   static final routes = [
@@ -63,39 +52,15 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: _Paths.LOGIN_PAGE,
-      page: () => LoginPageView(),
-      binding: LoginPageBinding(),
-    ),
-    GetPage(
-      name: _Paths.ACCOUNT_PAGE,
-      page: () => AccountPageView(),
-      binding: AccountPageBinding(),
-    ),
-    GetPage(
-      name: _Paths.KIRIM_TULISAN,
-      page: () => KirimTulisanView(),
-      binding: KirimTulisanBinding(),
-    ),
-    GetPage(
       name: _Paths.HOME_PAGE,
       page: () => HomePageView(),
       binding: HomePageBinding(),
     ),
-    GetPage(
-      name: _Paths.SIGNUP_PAGE,
-      page: () => SignupPageView(),
-      binding: SignupPageBinding(),
-    ),
+
     GetPage(
       name: _Paths.NAVBAR_PAGE,
       page: () => NavbarPageView(),
       binding: NavbarPageBinding(),
-    ),
-    GetPage(
-      name: _Paths.ACCOUNT_INFO,
-      page: () => AccountInfoView(),
-      binding: AccountInfoBinding(),
     ),
     // GetPage(
     // name: _Paths.NAVBOTTOM,
@@ -155,6 +120,11 @@ class AppPages {
       name: _Paths.KALKULATOR_DUIT,
       page: () => KalkulatorDuitView(),
       binding: KalkulatorDuitBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => AboutView(),
+      binding: AboutBinding(),
     ),
   ];
 }

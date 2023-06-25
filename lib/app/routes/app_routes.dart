@@ -26,6 +26,7 @@ abstract class Routes {
   static const UTANG_TERKINI = _Paths.UTANG_TERKINI;
   static const UTANG_APBN = _Paths.UTANG_APBN;
   static const KALKULATOR_DUIT = _Paths.KALKULATOR_DUIT;
+  static const ABOUT = _Paths.ABOUT;
 }
 
 abstract class _Paths {
@@ -51,4 +52,5 @@ abstract class _Paths {
   static const UTANG_TERKINI = '/utang-terkini';
   static const UTANG_APBN = '/utang-apbn';
   static const KALKULATOR_DUIT = '/kalkulator-duit';
+  static const ABOUT = '/about';
 }

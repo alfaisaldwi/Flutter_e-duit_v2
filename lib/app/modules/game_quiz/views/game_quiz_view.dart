@@ -169,6 +169,7 @@ class GameQuizView extends GetView<GameQuizController> {
                                 ElevatedButton(
                                   onPressed: () async {
                                     Get.back();
+                                    print(controller.nilai);
                                     controller.userAnswer
                                         .add(controller.isAnswer.value);
 

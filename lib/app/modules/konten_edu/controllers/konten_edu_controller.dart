@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:http/http.dart' as http;
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -101,64 +100,7 @@ class KontenEduController extends GetxController {
   @override
   void onInit() {
     // super.onInit();
-    if (FirebaseAuth.instance.currentUser != null) {
-      FirebaseFirestore.instance
-          .collection("profile")
-          .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
-          .snapshots()
-          .listen((data) {
-        data.docs.forEach((doc) {
-          liked = doc.data()['listliked'];
-        });
-
-        print('---------------$liked');
-      });
-      super.onInit();
-    } else {
-      // super.onInit();
-    }
-    print(FirebaseAuth.instance.currentUser);
-    getData();
   }
 
-  void postLike(String docId) async {
-    if (liked.contains(docId)) {
-      print('cancel');
 
-      Fluttertoast.showToast(
-        msg: 'Kamu sudah menyukai artikel ini',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        backgroundColor: Colors.grey[800],
-        textColor: Colors.white,
-        fontSize: 14.0,
-      );
-    } else {
-      var uid = FirebaseAuth.instance.currentUser!.uid;
-
-      List<dynamic> tambahObjekKeList() {
-        var newObjek = docId;
-        liked.add(newObjek);
-        return liked;
-      }
-
-      liked = tambahObjekKeList();
-
-      liked.expand((jawab) => jawab);
-      await dbKonten.doc(docId).update({"likes": FieldValue.increment(1)});
-      dbProfile.doc(uid).update({"listliked": liked});
-      dbProfile.doc(uid).update({"poin": FieldValue.increment(5)});
-      // print("masuk, $w");
-      Fluttertoast.showToast(
-        msg: 'Kamu menyukai artikel ini',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.grey[800],
-        textColor: Colors.white,
-        fontSize: 14.0,
-      );
-    }
-    print(liked);
-  }
 }

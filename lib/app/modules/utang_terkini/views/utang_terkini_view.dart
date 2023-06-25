@@ -43,6 +43,14 @@ class UtangTerkiniView extends GetView<UtangTerkiniController> {
                     style: GoogleFonts.inter(fontSize: 14),
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
+                Image.asset('assets/images/utang_terkini1.png'),
+                SizedBox(
+                  height: 20,
+                ),
+                Image.asset('assets/images/utang_terkini2.png'),
               ],
             ),
           ),

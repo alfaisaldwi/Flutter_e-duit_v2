@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:get/get.dart';
 
 class NavbarPageController extends GetxController {
   var tabIndex = 0.obs;
   Rx<bool>? isSelected;
-
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  User? user;
 
   void changeTabIndex(int index) {
     tabIndex.value = index;
