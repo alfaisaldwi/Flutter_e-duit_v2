@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165925289055",
+    "project_id": "e-duit-d91ce",
+    "storage_bucket": "e-duit-d91ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165925289055:android:770af99f00f4a83bb1efea",
+        "android_client_info": {
+          "package_name": "eduit.eduit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165925289055-b3smohg88rri6ee6u6nj6gpfkg4rfpl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUJqlpcDSvTkWTn62qLfDNk4qrHo-U4WU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165925289055-b3smohg88rri6ee6u6nj6gpfkg4rfpl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
