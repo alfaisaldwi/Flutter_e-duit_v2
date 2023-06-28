@@ -60,16 +60,13 @@ class HomePageView extends GetView<HomePageController> {
                     ),
                     GestureDetector(
                       onTap: (() async {
-                          await PersistentNavBarNavigator.pushNewScreen(
-                            context,
-                            screen: GameQuizView(),
-                            withNavBar:
-                                true, // OPTIONAL VALUE. True by default.
-                            pageTransitionAnimation:
-                                PageTransitionAnimation.cupertino,
-                          );
-
-                        
+                        await PersistentNavBarNavigator.pushNewScreen(
+                          context,
+                          screen: GameQuizView(),
+                          withNavBar: true, // OPTIONAL VALUE. True by default.
+                          pageTransitionAnimation:
+                              PageTransitionAnimation.cupertino,
+                        );
                       }),
                       child: Container(
                         height: 180,
@@ -131,8 +128,6 @@ class HomePageView extends GetView<HomePageController> {
                       children: [
                         GestureDetector(
                           onTap: () async {
-                           
-
                             await PersistentNavBarNavigator
                                 .pushNewScreenWithRouteSettings(
                               settings: RouteSettings(
@@ -311,52 +306,75 @@ class searchSuggest extends SearchDelegate {
 
       return kataTitle.contains(input);
     }).toList();
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.vertical,
-        physics: ScrollPhysics(),
-        itemCount: suggest.length,
-        itemBuilder: (context, index) {
-          final sugg = suggest[index];
-          if (sugg.kata!.length <= 1 || suggest.length <= 1) {
-            nf = 'Maaf pencarian tidak ditemukan';
-            return Text(
-              nf,
-              style: GoogleFonts.inter(
-                  fontSize: 15.0, fontWeight: FontWeight.bold),
-            );
-          } else {
-            return Column(
-              children: [
-                Table(
-                  children: [
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text(
-                          "${sugg.kata}",
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.inter(
-                              fontSize: 15.0, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            "${sugg.arti}",
-                            style: GoogleFonts.inter(
-                              fontSize: 15.0,
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Kamus Keuangan.',
+                style: GoogleFonts.inter(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff034779)),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              physics: ScrollPhysics(),
+              itemCount: suggest.length,
+              itemBuilder: (context, index) {
+                final sugg = suggest[index];
+                if (sugg.kata!.length <= 1 || suggest.length <= 1) {
+                  nf = 'Maaf pencarian tidak ditemukan';
+                  return Text(
+                    nf,
+                    style: GoogleFonts.inter(
+                        fontSize: 15.0, fontWeight: FontWeight.bold),
+                  );
+                } else {
+                  return Column(
+                    children: [
+                      Table(
+                        children: [
+                          TableRow(children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Text(
+                                "${sugg.kata}",
+                                textAlign: TextAlign.justify,
+                                style: GoogleFonts.inter(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
-                          )),
-                    ]),
-                  ],
-                ),
-              ],
-            );
-          }
-        },
+                            Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Text(
+                                  "${sugg.arti}",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 15.0,
+                                  ),
+                                )),
+                          ]),
+                        ],
+                      ),
+                    ],
+                  );
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -13,7 +13,7 @@ class UtangTerkiniView extends GetView<UtangTerkiniController> {
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.only(left: 42.0, right: 42, top: 80),
+            padding: const EdgeInsets.only(left: 30.0, right: 30, top: 80),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -51,6 +51,19 @@ class UtangTerkiniView extends GetView<UtangTerkiniController> {
                   height: 20,
                 ),
                 Image.asset('assets/images/utang_terkini2.png'),
+                SizedBox(
+                  height: 20,
+                ),
+                Image.asset('assets/images/utang_terkini3.png'),
+                Image.asset('assets/images/utang_terkini4.png'),
+                SizedBox(
+                  height: 10,
+                ),
+                Image.asset('assets/images/utang_terkini5.png'),
+                Image.asset('assets/images/utang_terkini6.png'),
+                SizedBox(
+                  height: 70,
+                ),
               ],
             ),
           ),

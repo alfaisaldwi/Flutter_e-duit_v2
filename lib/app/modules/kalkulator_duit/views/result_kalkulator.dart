@@ -185,7 +185,7 @@ class ResultKalkulatorView extends GetView<KalkulatorDuitController> {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 70,
               )
             ],
           ),

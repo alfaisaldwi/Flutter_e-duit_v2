@@ -39,6 +39,9 @@ class AboutView extends GetView<AboutController> {
                   ),
                 ),
                 Image.asset('assets/images/about2.png'),
+                SizedBox(
+                  height: 20,
+                ),
                 Image.asset('assets/images/abou3.png'),
                 Image.asset('assets/images/about4.png'),
                 Image.asset('assets/images/about5.png'),
