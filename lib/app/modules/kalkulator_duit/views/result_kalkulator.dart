@@ -115,7 +115,7 @@ class ResultKalkulatorView extends GetView<KalkulatorDuitController> {
                       height: 10,
                     ),
                     Text(
-                      'Rp. ${data[2] ?? 0} ',
+                      'Rp. ${data[2]} ',
                       style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
@@ -135,7 +135,7 @@ class ResultKalkulatorView extends GetView<KalkulatorDuitController> {
                       height: 10,
                     ),
                     Text(
-                      ' ${data[3]}% pertahun',
+                      ' ${controller.perkiraan.value} % pertahun',
                       style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
@@ -157,9 +157,9 @@ class ResultKalkulatorView extends GetView<KalkulatorDuitController> {
                     Text(
                       'Rp. ${controller.hasil}',
                       style: GoogleFonts.inter(
-                          fontSize: 15,
+                          fontSize: 16,
                           color: Color(0xff034779),
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.w800),
                     ),
                     SizedBox(
                       height: 10,

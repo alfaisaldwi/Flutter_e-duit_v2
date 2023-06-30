@@ -223,8 +223,9 @@ class KalkulatorDuitView extends GetView<KalkulatorDuitController> {
                                   onChanged: (String? value) {
                                     // controller.onselectedValue!(value);
                                     controller.onItemSelected(value!);
-                                    print(controller.taxRate);
+                                    print(controller.interestRate);
                                     print(controller.onselectedValue);
+                                    print('asdsad ${controller.perkiraan}');
                                   },
                                   buttonStyleData: const ButtonStyleData(
                                     padding:
@@ -256,18 +257,21 @@ class KalkulatorDuitView extends GetView<KalkulatorDuitController> {
                               child: Row(
                                 children: [
                                   Container(
-                                    width: 40,
-                                    child: TextFormField(
-                                      controller:
-                                          controller.interestRateController,
-                                      inputFormatters: [
-                                        FilteringTextInputFormatter(
-                                            RegExp("[0-9]"),
-                                            allow: true),
-                                      ],
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(),
-                                    ),
+                                    alignment: Alignment.center,
+                                    width: 30,
+                                    child: Obx(() => TextFormField(
+                                          enabled: false,
+                                          inputFormatters: [
+                                            FilteringTextInputFormatter(
+                                                RegExp("[0-9]"),
+                                                allow: true),
+                                          ],
+                                          keyboardType: TextInputType.number,
+                                          decoration: InputDecoration(
+                                              labelStyle: TextStyle(),
+                                              labelText:
+                                                  '${controller.perkiraan.value}'),
+                                        )),
                                   ),
                                   SizedBox(
                                     width: 5,
@@ -332,8 +336,7 @@ class KalkulatorDuitView extends GetView<KalkulatorDuitController> {
                                 .investmentDurationController.text.isNotEmpty &&
                             controller
                                 .monthlyInvestmentController.text.isNotEmpty &&
-                            controller.interestRateController.text.isNotEmpty &&
-                            controller.taxRate != null) {
+                            controller.interestRate != null) {
                           var parseUtang = int.tryParse(
                               controller.initialInvestmentController.text);
                           String utang =
@@ -346,27 +349,27 @@ class KalkulatorDuitView extends GetView<KalkulatorDuitController> {
                               controller.monthlyInvestmentController.text);
                           String target =
                               NumberFormat.decimalPattern().format(parseTarget);
-                          var parsePerkiraan = int.tryParse(
-                              controller.interestRateController.text);
-                          String perkiraan = NumberFormat.decimalPattern()
-                              .format(parsePerkiraan);
+
                           print(controller.initialInvestmentController.text);
                           print(controller.investmentDurationController.text);
                           print(
                               '${controller.monthlyInvestmentController.text} target');
-                          print(controller.interestRateController.text);
-                          print(controller.taxRate);
+
+                          print(controller.interestRate);
                           controller.calculateInvestmentResult();
 
-                          Get.to(() => ResultKalkulatorView(),
-                              arguments: [utang, waktu, target, perkiraan]);
+                          Get.to(() => ResultKalkulatorView(), arguments: [
+                            utang,
+                            waktu,
+                            target,
+                          ]);
                         } else {
                           print(controller.initialInvestmentController.text);
                           print(controller.investmentDurationController.text);
                           print(
                               '${controller.monthlyInvestmentController.text} target');
-                          print(controller.interestRateController.text);
-                          print(controller.taxRate);
+
+                          print(controller.interestRate);
                           Fluttertoast.showToast(
                             msg: 'Tolong isi semua kolomnya',
                             toastLength: Toast.LENGTH_SHORT,
@@ -383,7 +386,6 @@ class KalkulatorDuitView extends GetView<KalkulatorDuitController> {
                 SizedBox(
                   height: 50,
                 ),
-                
               ],
             ),
           ),
