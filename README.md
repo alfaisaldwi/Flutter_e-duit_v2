@@ -1,16 +1,33 @@
-# eduit
+# eduit 
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-A new Flutter project.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Investment Calculation Simulation
+    -Reksadana Campuran
+    -Reksadana Saham
+    -Reksadana Pendapatan Tetap
+    -Reksadana Pasar Uang
+    -Emas
+    -Surat Berharga Negara
+    -Deposito
+- Quiz to find out your type of investor
+    -Aggressive Investor
+    -Moderate Investor
+    -Conservative investor
+- Financial dictionary
+- Search
+- Content Education
+- Share
+- Financial Planning Consultation
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech
+- Dart.
+- Flutter.
+- Firebase Storage.
+- Visual Studio Code.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
