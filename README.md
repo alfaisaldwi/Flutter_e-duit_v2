@@ -6,16 +6,16 @@
 
 - Investment Calculation Simulation
     -Reksadana Campuran
-    -Reksadana Saham
-    -Reksadana Pendapatan Tetap
-    -Reksadana Pasar Uang
-    -Emas
-    -Surat Berharga Negara
-    -Deposito
+    - Reksadana Saham
+    - Reksadana Pendapatan Tetap
+    - Reksadana Pasar Uang
+    - Emas
+    - Surat Berharga Negara
+    - Deposito
 - Quiz to find out your type of investor
-    -Aggressive Investor
-    -Moderate Investor
-    -Conservative investor
+    - Aggressive Investor
+    - Moderate Investor
+    - Conservative investor
 - Financial dictionary
 - Search
 - Content Education
